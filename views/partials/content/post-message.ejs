@@ -1,0 +1,33 @@
+<div class="position-absolute start-50 translate-middle-x" style="margin-top: 90px; width: 800px">
+  <div>
+    <form method="POST">
+      <div class="form-control">
+        <h1 style="padding-left: auto" class="mb-4">Post a Message!</h1>
+
+        <div class="form-group">
+          <div class="form-control mb-4">
+            <label for="title" class="mb-2">Title:</label>
+            <input id="title" class="form-control mb-4" placeholder="Title of your message" type="text" name="title"
+              required />
+
+            <label for="message" class="mb-2">Message:</label>
+            <textarea id="message" class="form-control mb-4" placeholder="Type your message here..." name="message"
+              required></textarea>
+          </div>
+        </div>
+
+        <input type="submit" class="btn btn-dark mb-4" value="Post Message" />
+      </div>
+    </form>
+  </div>
+
+  <% if (typeof errors !=='undefined' ) { %>
+    <ul>
+      <% errors.forEach(function(error) { %>
+        <li>
+          <%= error.msg %>
+        </li>
+        <% }); %>
+    </ul>
+    <% } %>
+</div>

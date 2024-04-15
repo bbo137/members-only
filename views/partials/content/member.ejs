@@ -1,0 +1,29 @@
+<div class="position-absolute start-50 translate-middle-x" style="margin-top: 90px; width: 400px">
+  <div>
+    <form method="POST">
+      <div class="form-control">
+        <h1 style="padding-left: auto" class="mb-2">Become a Member!</h1>
+
+        <div class="form-group">
+          <div class="form-control mb-3">
+            <label for="secretCode" class="mb-1">Enter Secret Code:</label>
+            <input id="secretCode" class="form-control mb-2" placeholder="Secret Code" type="text" name="secretCode"
+              required />
+          </div>
+        </div>
+
+        <input type="submit" class="btn btn-dark mb-2" value="Submit" />
+      </div>
+    </form>
+  </div>
+
+  <% if (typeof errors !=='undefined' ) { %>
+    <ul>
+      <% errors.forEach(function(error) { %>
+        <li>
+          <%= error.msg %>
+        </li>
+        <% }); %>
+    </ul>
+    <% } %>
+</div>
