@@ -12,6 +12,7 @@ const asyncHandler = require('express-async-handler');
 
 const isAuth = require('./authMiddleware').isAuth;
 const isAdmin = require('./authMiddleware').isAdmin;
+const isAuthorOrAdmin = require('./authMiddleware').isAuthorOrAdmin;
 
 // Routes
 
@@ -21,7 +22,7 @@ router.get('/post-message', isAuth, postController.post_message_get);
 
 router.post('/post-message', isAuth, postController.post_message_post);
 
-router.post('/delete-post/:id', isAdmin, postController.delete_post);
+router.post('/delete-post/:id', isAuth, isAuthorOrAdmin, postController.delete_post);
 
 router.get('/member', isAuth, statusController.become_member_get);
 

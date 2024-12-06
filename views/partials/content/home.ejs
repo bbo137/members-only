@@ -52,7 +52,8 @@
             <p class="card-text">
               <%= post.message %>
             </p>
-            <% if (isAdmin) { %>
+
+            <% if (isAdmin || userId === post.user.id) { %>
               <div class="d-flex justify-content-end">
                 <form action="/delete-post/<%= post.id %>" method="POST">
                   <button type="submit" class="btn btn-danger">Delete</button>

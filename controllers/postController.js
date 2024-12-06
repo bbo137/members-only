@@ -12,7 +12,6 @@ exports.post_home = asyncHandler(async (req, res, next) => {
     .populate({ path: 'user', select: 'first_name family_name' })
     .sort({ timestamp: -1 })
     .exec();
-
   res.render('index', {
     route: 'home',
     message_list: AllMessages,
@@ -20,6 +19,7 @@ exports.post_home = asyncHandler(async (req, res, next) => {
     isAdmin: req.isAuthenticated() && req.user.isAdmin,
     isMember: req.isAuthenticated() && req.user.isMember,
     user: req.user ? req.user.name : 'none',
+    userId: req.user ? req.user.id : 'none',
   });
 });
 
