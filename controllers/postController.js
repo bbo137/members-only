@@ -24,7 +24,9 @@ exports.post_home = asyncHandler(async (req, res, next) => {
 });
 
 exports.post_message_get = asyncHandler(async (req, res, next) => {
-  res.render('index', { route: 'post-message' });
+  res.render('index', { route: 'post-message', 
+    isAuth: req.isAuthenticated(),
+    user: req.user ? req.user.name : 'none', });
 });
 
 exports.post_message_post = [
