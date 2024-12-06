@@ -4,9 +4,9 @@ A web application built with Node.js and Express.js that allows authenticated us
 
 ## Features
 
-- **User Authentication:** Users can sign up, log in, and log out.
+- **User Authentication:** Users can ``sign up``, ``log in``, and ``log out``.
 - **Role Management:** Different roles including admin, member, and author.
-- **Post Management:** Authenticated users can create posts; only authors and admins can delete posts.
+- **Post Management:** Authenticated users can ``create posts``; only authors and admins can ``delete posts``.
 - **Role-based Permissions:** Different capabilities and permissions based on user roles.
 - **Anonymous Posting:** Posts are anonymous to non-members; members and admins can see who posted.
 - **Special Codes:** Use secret codes to become a member or admin.
